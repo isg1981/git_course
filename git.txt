@@ -15,3 +15,21 @@ para addeitear ese archivo especifico"""
 
 5) git log
 """muestra los commits generados y el numero de commit"""
+
+6) git branch
+"""muestra las branches que se tienen""" 
+
+6*) git branch nueva-branch
+"""genera una nueva branch pero no se para en ella"""
+
+7*) git checkout nombre-branch
+"""Se para en la branch nombre-branch"""
+
+7) git checkout -b nombre-nueva-branch
+"""genera una nueva branch y se para en ella"""
+
+8) git checkout 80be5d0edacba3ab20b41e0dfaeb94ce8e6bda61
+"""el código del checkout nos permite pasar a commits anteriores y ver esos cambios"""
+
+9) git checkout master
+"""Además de permitir pasar a la branch master, nos permite volver a los últimos commits"""
