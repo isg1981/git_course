@@ -33,3 +33,28 @@ para addeitear ese archivo especifico"""
 
 9) git checkout master
 """Además de permitir pasar a la branch master, nos permite volver a los últimos commits"""
+
+10) git switch nombre-branch
+"""cambia de branch, también hace lo mismo que git checkout pero la diferencia es que es especifico de branchs,
+mientras checkout es para branchs y commits"""
+
+11) git switch -c nueva-branch
+"""Hace lo mismo que git checkout -b, crea una nueva branch y se para en ella."""
+
+12) git ls-files
+"""Me muestra todos los archivos que tiene la branch, incluso si fueron borrados."""
+
+13) git rm nombre-file
+"""borra un archivo, luego hacer git commit -m "" y se gerea un commit de borrado del archivo."""
+
+14) git revert HEAD~1..HEAD
+"""Me revierte el último commit, en este caso el borrado del archivo. En caso de hacer git revert HEAD~2..HEAD
+me revierte a 2 commits anteriores. Para salir de la pantalla de git revert se coloca :q!"""
+
+
+
+
+
+
+
+El último commit en cada branch es lo que se denomina head 
