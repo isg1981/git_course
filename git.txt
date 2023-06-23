@@ -1,0 +1,4 @@
+Git
+
+1) git init 
+"""git init se utiliza para inicializar una carpeta de working directory"""
