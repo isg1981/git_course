@@ -51,9 +51,19 @@ mientras checkout es para branchs y commits"""
 """Me revierte el último commit, en este caso el borrado del archivo. En caso de hacer git revert HEAD~2..HEAD
 me revierte a 2 commits anteriores. Para salir de la pantalla de git revert se coloca :q!"""
 
+15) git restore nombre-file-a-restorear
+"""si tenemos cambios en un archivo y queremos borrarlos o volver a la version del último commit hacemos git restore
+y el nombre del file"""
 
+16) git clean -dn
+"""me hace un listado de los archivos que figuran en el status pero no están commiteados que podrían borrarse"""
 
+17) git clean -df
+"""borra los archivos que no están commiteados"""
 
+18) """Para deshacer una modificacion de un archivo que haya sido stageado (git add) hay que hacer 2 pasos."""
+    1- git reset nombre-archivo-stageado
+    2- git checkout nombre-archivo-stageado
 
 
 
