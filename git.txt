@@ -2,3 +2,16 @@ Git
 
 1) git init 
 """git init se utiliza para inicializar una carpeta de working directory"""
+
+2) git status para ver el status de la branch o commits
+
+3) git add . 
+"""para subir los cambios al área de preparación, también conocida como el índice.
+El área de preparación es un espacio intermedio entre el directorio de trabajo y el repositorio Git, donde se pueden
+seleccionar los cambios específicos que se desean incluir en el próximo commit. Se hacer git add nombre-archivo solo
+para addeitear ese archivo especifico"""
+
+4) git commit -m "la descripción del commit"
+
+5) git log
+"""muestra los commits generados y el numero de commit"""
