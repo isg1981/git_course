@@ -63,8 +63,30 @@ y el nombre del file"""
 
 18) """Para deshacer una modificacion de un archivo que haya sido stageado (git add) hay que hacer 2 pasos."""
     1- git reset nombre-archivo-stageado
+    2- git checkout nombre-archivo-stageado """Esto se hace para ver la modificación en el archivo"""
+
+19) """Otra manera de hacer 18) es usar:"""
+    1- git restore --stage nombre-archivo-stageado
     2- git checkout nombre-archivo-stageado
 
+20) git reset --soft HEAD~1
+"""resetea el último commit, es decir deshace el commit, pero el archivo sigue estando en el stage area (git ls-files).
+Si hacemos git reset HEAD~1 se resetea el último commit pero el archivo también desaparece del stage area,
+pero sigue apareciendo en el working directory.
+El último es el git reset --hard HEAD~1 borra el commit, borra el archivo del stage area (git ls-files)
+y borra el archivo del working directory"""
+
+21) git branch -d nombre-branch
+"""Se pueden borrar las branchs que no se necesitan, las que ya se hayan mergeado por ejemplo se usa -d,
+si uso -D es para forzar el delete de branch sin importar si fueron o no mergeadas. Se pueden borrar multiples
+branchs poniendo el nombre a continuación de otro."""
+
+22) """Si queremos hacer modificaciones a un commit anterior, entonces vamos a dicho commit con git checkout ID_commit
+y aparece el HEAD-Detached mode en git branch. En este caso se hacen las modificaciones necesarias, luego 
+git add, git commit y si queremos cambiar de branch vamos a ver que las branches estan desfazadas. En este caso
+tenemos que crear una nueva branch con git branch <new-branch-name> 20e2318 (este codigo final cambia). 
+Una vez creada esta branch vamos a master y hacemos un git merge new-branch-name. Cuando se mergea vamos a 
+ver que todo lo agregado en ese viejo commit aparece ahora en maste. Luego podemos borrar la branch."""
 
 
 El último commit en cada branch es lo que se denomina head 
