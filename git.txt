@@ -88,5 +88,27 @@ tenemos que crear una nueva branch con git branch <new-branch-name> 20e2318 (est
 Una vez creada esta branch vamos a master y hacemos un git merge new-branch-name. Cuando se mergea vamos a 
 ver que todo lo agregado en ese viejo commit aparece ahora en maste. Luego podemos borrar la branch."""
 
+23) """Si queremos tener cosas en el working directory y no compartirlas, podemos usar el gitignore para 
+ignorar esos archivos o carpetas. Para eso creamos un archivo en el working directory que sea .gitignore.
+Dentro del gitignore ponemos el nombre del archivo que queremos ignorar. En caso de ser varios archivos
+se puede usar el *.log para ignorar todos los archivos .log. Si hubiera algún archivo de los .log que no 
+se quisiera ignorar entonce se pone además !nombre.log con el nombre del archivo a no ignorar. Por otro
+lado, si se quiere ignorar una carpeta se puede hacer poniendo el nombre de la carpeta seguido de /* para 
+agregar que de esa carpeta se ignoran todos los archivos."""
+
+
+Segunda parte
+
+1) git stash
+"""Guarda la info que no se commitio y vuelve al estado inicial."""
+
+2) git stash apply
+"""Recuperamos los cambios que se habían stasheados"""
+
+3) git stash list
+"""En caso de hacer nuevas modificaciones y stashear el git stash apply solo nos lleva al último stash.
+Si queremos ver stasheos anteriores aplicamos git stash list."""
+
+
 
 El último commit en cada branch es lo que se denomina head 
