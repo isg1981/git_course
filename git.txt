@@ -22,10 +22,10 @@ para addeitear ese archivo especifico"""
 6*) git branch nueva-branch
 """genera una nueva branch pero no se para en ella"""
 
-7*) git checkout nombre-branch
+7) git checkout nombre-branch
 """Se para en la branch nombre-branch"""
 
-7) git checkout -b nombre-nueva-branch
+7*) git checkout -b nombre-nueva-branch
 """genera una nueva branch y se para en ella"""
 
 8) git checkout 80be5d0edacba3ab20b41e0dfaeb94ce8e6bda61
@@ -98,7 +98,7 @@ agregar que de esa carpeta se ignoran todos los archivos."""
 
 
 Segunda parte
-
+-------------------------------- stash ------------------------------------------------
 1) git stash
 """Guarda la info que no se commitio y vuelve al estado inicial."""
 
@@ -108,6 +108,34 @@ Segunda parte
 3) git stash list
 """En caso de hacer nuevas modificaciones y stashear el git stash apply solo nos lleva al último stash.
 Si queremos ver stasheos anteriores aplicamos git stash list."""
+
+4) git stash apply 2
+"""Ahí nos movemos al stash con el índice 2. El índice 0 refiere al úlmimo stash que se haga."""
+
+5) git stash push -m "comentario del stash"
+"""Podemos agregar comentarios al stash haciendo esto para recordar el tipo de stash que se hizo"""
+
+6) git stash pop 0
+"""Si queremos traer nuevamente los cambios del último stash. Luego git add, git commit y traemos todos los
+datos de ese stash. También se podría usar apply en lugar de pop."""
+
+7) git stash drop 2
+"""Si queremos borrar el stash de índice 2."""
+
+8) git stash clear
+"""borra todos los stash que haya"""
+
+--------------------------------------
+9)git reflog
+"""Permite recuperar información que se halla perdido. Reglog store toda nuestros cambios que hallamos hechos 
+en el proyecto de git. Si borramos el último commit con git reset --hard HEAD~1. Luego ponemos git reflog y 
+vemos toda la info de todos lo commits previos. Copiaomos el código del commit que queremos recuperar y ponemos
+git reset --hard d5bebc2. Con eso último recupero el commit borrado. También git reflog permite recuperar los 
+los borrados de branchs""" 
+
+-------------------------------------- Merge ------------------------------------
+
+
 
 
 
