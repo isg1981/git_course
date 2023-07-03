@@ -134,8 +134,16 @@ git reset --hard d5bebc2. Con eso último recupero el commit borrado. También g
 los borrados de branchs""" 
 
 -------------------------------------- Merge ------------------------------------
+10) git merge branch_a_mergear
+"""Fast-foward merge se produce cuanto estuve trabajando en una branch aparte y quiero traer los últimos cambios,
+commits de la branch a master. En ese caso salgo de la branch y voy a master y mergeo. Esto se da solo cuando no 
+nuevos commits en master. Solo cambia el HEAD de la branch a mergear a master.
 
+11) git merge --squash branch_a_mergear 
+"""Lo que hace es traer los cambios de la branch a mergear a master, como si hubiera hecho git add . En este caso
+hago git commit y tengo los cambios mergeados en master"""
 
+12) git rebase 
 
 
 
