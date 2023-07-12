@@ -127,11 +127,11 @@ datos de ese stash. También se podría usar apply en lugar de pop."""
 
 --------------------------------------
 9)git reflog
-"""Permite recuperar información que se halla perdido. Reglog store toda nuestros cambios que hallamos hechos 
-en el proyecto de git. Si borramos el último commit con git reset --hard HEAD~1. Luego ponemos git reflog y 
-vemos toda la info de todos lo commits previos. Copiaomos el código del commit que queremos recuperar y ponemos
-git reset --hard d5bebc2. Con eso último recupero el commit borrado. También git reflog permite recuperar los 
-los borrados de branchs""" 
+"""Permite ver toda la info que se tiene en el proyecto y con esto recuperar información que se halla perdido. 
+Reglog storea toda nuestros cambios que hayamos hecho en el proyecto de git. Si borramos el último commit con 
+git reset --hard HEAD~1. Luego ponemos git reflog y vemos toda la info de todos lo commits previos. Copiaomos 
+el código del commit que queremos recuperar y ponemos git reset --hard d5bebc2. Con eso último recupero el commit borrado. 
+También git reflog permite recuperar los borrados de branchs""" 
 
 -------------------------------------- Merge ------------------------------------
 10) git merge branch_a_mergear
@@ -145,11 +145,58 @@ hago git commit y tengo los cambios mergeados en master"""
 
 12) git rebase master
 """El git rebase sirve para agregar los commits de otras branch a alguna determinada, sabiendo que se hicieron modificaciones 
-en la branch determinada.
+en la branch determinada. En este caso se traen las modificaciones de master a la otra branch.
 Si estoy parado en la branch que tiene los commits que quiero pasar a la branch master, entonces hago git rebase
 master. Hay que tener cuidado con esto ya que rebase crea nuevos commits en master en lugar de pasar los que se habían
-hecho en la otra branch. No es recomendado cuando se tienen working directories remotos, por ejomplo github."""
+hecho en la otra branch. No es recomendado cuando se tienen working directories remotos, por ejomplo github. 
+Si lo combinamos con 'git merge branch-determinada' desde master lo que tenemos nuevamente es un Fast-forward merge, trayendo
+a master todas las modificaciones de la branch-determinada."""
 
+13) git merge --abort
+"""Si estamos haciendo un merge y salta un conflicto, podemos abortar el merge y volvemos al momento previo."""
 
+14) git log --merge
+"""Nos permite ver los commits que estamos por mergear, para obtener más info de los commits que se están realizando."""
+
+15) git diff
+"""En lo mismo nos da la diferencia de lo que se quiere mergear y los conflictos
+
+-----cherry-pick--------
+16) """Cherry-pick sirve para traer un solo commit y no todos de alguna branch en particular. En el caso de git merge se traen
+todos los commits y se mergean. Si en lugar de eso no queremos mergear todos los commits podemos usar cherry-pick y mergear los 
+commits que queremos."""
+
+17) git cherry-pick cc8a1170a26781c38fa8a2fccb85b653f02ed481
+"""En este caso estoy mergendo un commit determinado de una branch en la branch donde estoy parado a la hora de hacer el 
+git cherry-pick."""
+
+-------- tag ------------------
+18) git tag nombre-tag cc8a1170a26781c38fa8a2fccb85b653f02ed481
+"""El git tag sirve para darle seguimiento y no perder de vista algún commit importante. Cosa de que si hay que volver se pueda
+volver a ese commit particular. Una vez hecho lo de arriba podemos hacer git tag para ver los tags que tenemos con sus nombres"""
+
+19) git show nobre-tag 
+"""Esto sirve para ver el commit que tenemos asociado a ese tag determinado, me devuelve el ID del commit flageado."""
+
+20) git tag -d nombre-tag
+"""con esto borramos la tag sobre el commit determinado."""
+
+21) git tag -a nombre-tag -m "mensaje del tag"
+"""esto lo que hace es agregar un tag al úlmimo commit y un mensaje que aparece cuado se hace el git show nombre-tag."""
+
+22) """En los siguientes links se puede encontrar más información de conflictos y estrategias en el merge 
+More on merge conflicts => https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging#_advanced_merging
+Additional merge strategies => https://git-scm.com/docs/merge-strategies """
+
+Tercer parte
+---------------------------------GitHub------------------------------------------------------
+"""si tengo todo en un repositorio local y quiero llevar lo a github, tengo que hacer git remote add origin URL. Donde origin 
+el nombre de la máquina remota, de alguna manera el alias de la URL remota.
+
+git branch -M main
+"""Esto renombra la branch master en la main branch. Si no queremos renombrarla no hace falta este paso."""
+
+git push -u origin main
+"""En este caso se pushea la branch main al remoto. 
 
 El último commit en cada branch es lo que se denomina head 
