@@ -143,7 +143,12 @@ nuevos commits en master. Solo cambia el HEAD de la branch a mergear a master.
 """Lo que hace es traer los cambios de la branch a mergear a master, como si hubiera hecho git add . En este caso
 hago git commit y tengo los cambios mergeados en master"""
 
-12) git rebase 
+12) git rebase master
+"""El git rebase sirve para agregar los commits de otras branch a alguna determinada, sabiendo que se hicieron modificaciones 
+en la branch determinada.
+Si estoy parado en la branch que tiene los commits que quiero pasar a la branch master, entonces hago git rebase
+master. Hay que tener cuidado con esto ya que rebase crea nuevos commits en master en lugar de pasar los que se habían
+hecho en la otra branch. No es recomendado cuando se tienen working directories remotos, por ejomplo github."""
 
 
 
