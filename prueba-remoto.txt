@@ -1,0 +1,1 @@
+un archivo de texto remoto en la branch branch-remota.
